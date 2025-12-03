@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BalancePet — Protótipo</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>BalancePet — Protótipo</header>
+
+<main>
+
+<!-- ========================= TELA 1 ========================= -->
+<section id="tela-1" class="screen visible">
+
+    <h2>Informações do Animal</h2>
+
+    <div class="animal-select">
+        <div class="animal-card active" data-animal="cachorro">Cachorro</div>
+        <div class="animal-card" data-animal="gato">Gato</div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label>Sexo / Condição</label>
+            <select id="sexo">
+                <option>Macho castrado</option>
+                <option>Macho não castrado</option>
+                <option>Fêmea castrada</option>
+                <option>Fêmea não castrada</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label>Peso</label>
+            <input type="number" id="peso" placeholder="Ex: 12" min="0" step="0.1" />
+        </div>
+
+        <div class="col-small">
+            <label>Unidade</label>
+            <select id="unidade-peso">
+                <option value="kg">kg</option>
+                <option value="lb">lb</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label>Idade</label>
+            <input type="number" id="idade" placeholder="Ex: 5" min="0" step="1" />
+        </div>
+
+        <div class="col-small">
+            <label>Unidade</label>
+            <select id="unidade-idade">
+                <option value="meses">meses</option>
+                <option value="anos">anos</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- **Nível de atividade** re-adicionado -->
+    <div class="row">
+        <div class="col">
+            <label>Nível de atividade</label>
+            <select id="atividade">
+                <option value="1.2">Sedentário (1.2)</option>
+                <option value="1.4" selected>Normal (1.4)</option>
+                <option value="1.6">Ativo (1.6)</option>
+                <option value="1.8">Muito ativo (1.8)</option>
+                <option value="2.0">Atleta (2.0)</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Calorias automáticas -->
+    <div class="row">
+        <div class="col">
+            <label>Calorias mínimas (automático)</label>
+            <input type="number" id="kcal-min" readonly />
+        </div>
+
+        <div class="col">
+            <label>Calorias máximas (automático)</label>
+            <input type="number" id="kcal-max" readonly />
+        </div>
+    </div>
+
+    <button id="btn-calcular-kcal">Calcular calorias</button>
+
+    <div id="media-box" class="result-box" style="display:none;"></div>
+
+    <button id="btn-avancar" class="hidden" style="display:none;">Avançar</button>
+
+</section>
+
+
+
+<!-- ========================= TELA 2 ========================= -->
+<section id="tela-2" class="screen">
+
+    <h2>Configurar Proporções</h2>
+
+    <p>Kcal média calculada: <b id="kcal-meta"></b></p>
+
+    <label class="radio-option">
+        <input type="radio" name="proporcao-modo" value="padrao" checked />
+        Usar proporção padrão (45% proteína / 35% carboidrato / 20% vegetais)
+    </label>
+
+    <label class="radio-option">
+        <input type="radio" name="proporcao-modo" value="manual" />
+        Definir minha própria proporção:
+    </label>
+
+    <div id="proporcao-manual" class="manual-box hidden" style="display:none;">
+        <div class="row">
+            <div class="col">
+                <label>Proteína (%)</label>
+                <input type="number" id="prop-proteina" placeholder="Ex: 45" />
+            </div>
+
+            <div class="col">
+                <label>Carboidrato (%)</label>
+                <input type="number" id="prop-carbo" placeholder="Ex: 35" />
+            </div>
+
+            <div class="col">
+                <label>Vegetais (%)</label>
+                <input type="number" id="prop-veg" placeholder="Ex: 20" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <button id="btn-gerar-dieta">Gerar dieta</button>
+        <button id="btn-voltar-1" class="btn-secondary">Voltar</button>
+    </div>
+
+    <div id="dieta-gerada" class="result-box" style="display:none;"></div>
+</section>
+
+</main>
+<!-- JS -->
+<script src="js/app.js"></script>
+</body>
+</html>
