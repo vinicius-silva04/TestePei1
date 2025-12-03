@@ -1,0 +1,19 @@
+body { margin:0; font-family: Arial, sans-serif; background:#f4f4f4; }
+header { background:#4a90e2; padding:20px; color:#fff; text-align:center; font-size:24px; }
+main { max-width:900px; margin:20px auto; background:#fff; padding:20px; border-radius:8px; }
+.row { display:flex; gap:10px; margin-bottom:15px; }
+label { font-weight:bold; display:block; margin-bottom:5px; }
+input, select { width:100%; padding:10px; border:1px solid #ccc; border-radius:5px; }
+.screen { display:none; }
+.visible { display:block; }
+.animal-select { display:flex; gap:20px; margin-bottom:20px; }
+.animal-card { flex:1; border:2px solid #ccc; padding:15px; border-radius:10px; cursor:pointer; text-align:center; }
+.animal-card.active { border-color:#4a90e2; background:#e9f4ff; }
+button { padding:12px 20px; background:#4a90e2; color:#fff; border:none; border-radius:6px; cursor:pointer; font-size:16px; }
+.btn-secondary { background:#777; margin-left:10px; }
+.result-box { background:#eef7ff; padding:15px; border-radius:8px; margin-top:15px; }
+.diet-item { background:#f1f1f1; padding:10px; border-radius:6px; margin-bottom:10px; }
+.alt-list button { margin-left:5px; background:#555; color:#fff; border:none; padding:5px 8px; border-radius:4px; cursor:pointer; }
+.manual-box { background:#f8f8f8; padding:15px; border-radius:8px; margin-top:10px; }
+.radio-option { display:block; margin-bottom:10px; cursor:pointer; }
+@media (max-width: 600px) { .row { flex-direction:column; } .col-small { width:100%; } }
